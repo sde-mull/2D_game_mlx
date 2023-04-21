@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 11:19:34 by pcoimbra          #+#    #+#             */
-/*   Updated: 2023/03/06 16:52:46 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/21 22:31:50 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_checknl(char *buff)
 	return (is_new_line);
 }
 
-int	ft_strlen(char *str)
+int	ft_strlen1(char *str)
 {
 	int	len;
 
@@ -51,8 +51,8 @@ char	*ft_get_line(char *buff, char *line)
 	int		buff_size;
 	char	*new_line;
 
-	buff_size = ft_strlen(buff);
-	new_line = malloc((buff_size + ft_strlen(line) + 1) * sizeof(char));
+	buff_size = ft_strlen1(buff);
+	new_line = malloc((buff_size + ft_strlen1(line) + 1) * sizeof(char));
 	if (!new_line)
 		return (NULL);
 	i = -1 * (line != NULL);

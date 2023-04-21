@@ -6,7 +6,7 @@
 #    By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 16:25:02 by pcoimbra          #+#    #+#              #
-#    Updated: 2023/04/20 21:32:13 by sde-mull         ###   ########.fr        #
+#    Updated: 2023/04/21 22:58:29 by sde-mull         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FT_INCLUDE 	= 	-Ilibft -Llibft -lft
 
 
 SRC_DIR		=	src/
-SRCS		=	
+SRCS		=	game.c init_structs.c rendering.c window.c keys.c
 
 GNL_DIR		=	gnl
 GNL			=	$(GNL_DIR)/get_next_line.c $(GNL_DIR)/get_next_line_utils.c
