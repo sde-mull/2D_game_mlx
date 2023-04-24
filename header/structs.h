@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:54:31 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/21 22:46:18 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/24 20:32:23 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,17 @@ typedef struct s_map
     char    **map;
     int     max_x;
     int     max_y;
-    char    *prefix;
-    char    *sufix;
 }   t_map;
+
+typedef struct s_img
+{
+	void			*mlx_img;
+	char			*addr;
+	int				bpp;
+	int				line_len;
+	int				endian;
+	int				imgx;
+	int				imgy;
+}					t_img;
 
 #endif

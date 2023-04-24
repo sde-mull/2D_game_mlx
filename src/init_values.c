@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   macros.h                                           :+:      :+:    :+:   */
+/*   init_values.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 19:27:44 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/24 19:32:48 by sde-mull         ###   ########.fr       */
+/*   Created: 2023/04/24 20:19:54 by sde-mull          #+#    #+#             */
+/*   Updated: 2023/04/24 20:20:48 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MACROS_H
-# define MACROS_H
+#include "../header/game.h"
 
-#define WIN_ERROR false
-#define WIN_SUCCESS true
-
-#define WIN_HEIGHT 992
-#define WIN_WIDTH 1920
-
-#define ICON 32
-
-#endif
+void init_values(char **argv)
+{
+    data()->map.map_nbr = 1;
+    data()->map.get_map_flag = 1;
+    data()->map_paths = argv;
+}

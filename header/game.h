@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/21 22:21:30 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/24 21:16:19 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,26 @@
 # include "macros.h"
 
 //Window.c
-
 int	    exit_game(void);
 bool	init_window(t_win *win);
 void    window_management(void);
 
 //rendering.c
-
 int render(void);
 
 //key.c
-
 int scan_key(int keycode);
 
-void init_values(void);
+//save_map_information.c
+void get_max_values(int fd);
+void save_map(int map_nbr);
+
+//init_values.c
+void init_values(char **argv);
+
+//images.c
+t_img	load_images(t_win *win, char *str);
+t_img	new_image(t_win *win, int x, int y);
+void	init_images(t_win *win);
 
 #endif
