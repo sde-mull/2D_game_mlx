@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/24 21:15:49 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:14:30 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ t_img	load_images(t_win *win, char *str)
 
 void	init_images(t_win *win)
 {
-    canvas()->game = new_image(win, data()->map.max_x * ICON, data()->map.max_y * ICON);
 }

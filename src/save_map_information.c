@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:16:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/24 21:15:20 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/25 22:14:41 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void save_map(int map_nbr)
 
     y = -1;
     if (data()->map.map)
-        free(data()->map.map);
+        free_array(data()->map.map);
     fd = open(data()->map_paths[map_nbr], O_RDONLY);
     get_max_values(fd);
     fd = open(data()->map_paths[map_nbr], O_RDONLY);

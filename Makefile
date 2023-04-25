@@ -6,7 +6,7 @@
 #    By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 16:25:02 by pcoimbra          #+#    #+#              #
-#    Updated: 2023/04/24 21:04:55 by sde-mull         ###   ########.fr        #
+#    Updated: 2023/04/25 22:17:02 by sde-mull         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FT_INCLUDE 	= 	-Ilibft -Llibft -lft
 
 
 SRC_DIR		=	src/
-SRCS		=	game.c init_structs.c rendering.c window.c keys.c save_map_information.c init_values.c images.c
+SRCS		=	game.c init_structs.c rendering.c window.c keys.c save_map_information.c init_values.c images.c free.c
 
 GNL_DIR		=	gnl
 GNL			=	$(GNL_DIR)/get_next_line.c $(GNL_DIR)/get_next_line_utils.c
@@ -32,7 +32,7 @@ LIBFT		=	libft
 DEPS		=	./minilibx-linux/libmlx_Linux.a
 
 _MLX		=	./minilibx-linux
-_MLX_FLAGS  =	-Lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+_MLX_FLAGS  =	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz 
 
 MAP 		= 	maps/map1.ber maps/map2.ber maps/map3.ber maps/map4.ber
 
