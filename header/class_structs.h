@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/24 20:42:13 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:52:41 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_objects
 typedef struct s_canvas
 {
     t_img game;
+    t_img background[5];
 }   t_canvas;
 
 typedef struct s_engine

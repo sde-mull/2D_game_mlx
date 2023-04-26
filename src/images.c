@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/25 22:14:30 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:56:54 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,9 @@ t_img	load_images(t_win *win, char *str)
 
 void	init_images(t_win *win)
 {
+	canvas()->background[0] = load_images(win, "images/xpm/background/final_battle.xpm");
+	canvas()->background[1] = load_images(win, "images/xpm/background/ice_battle.xpm");
+	canvas()->background[2] = load_images(win, "images/xpm/background/mid_battle.xpm");
+	canvas()->background[3] = load_images(win, "images/xpm/background/night_battle.xpm");
+	canvas()->background[4] = load_images(win, "images/xpm/background/start_battle.xpm");
 }

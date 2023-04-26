@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:29:39 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/21 20:42:01 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:00:03 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int scan_key(int keycode)
 {
+    if (keycode == ESC)
+        exit_game();
     return (0);
 }

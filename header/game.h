@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/25 22:26:48 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:51:24 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void    get_fps();
 int scan_key(int keycode);
 
 //save_map_information.c
-void get_max_values(int fd);
+void get_max_values(int *fd);
 void save_map(int map_nbr);
 
 //init_values.c
@@ -56,5 +56,10 @@ void	init_images(t_win *win);
 void	free_array(char **arr);
 void    free_win(t_win *win);
 int	    exit_game(void);
+
+//my_mlx_func.c
+
+void	        my_mlx_pixel_put(t_img *data, int x, int y, int color);
+unsigned int	my_mlx_get_pixel(t_img *data, int x, int y);
 
 #endif

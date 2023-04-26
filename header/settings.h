@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:19 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/21 20:41:48 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:00:43 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@
 #define ARROW_RIGHT 65363
 #define ARROW_UP 65362
 #define ARROW_DOWN 65364
+#define ESC 65307
 
 #endif

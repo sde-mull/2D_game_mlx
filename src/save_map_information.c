@@ -6,13 +6,13 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:16:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/25 22:14:41 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:52:02 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/game.h"
 
-void get_max_values(int fd)
+void get_max_values(int *fd)
 {
    int x;
    int y;
@@ -20,19 +20,19 @@ void get_max_values(int fd)
 
    y = 0;
    x = 0;
-   str = get_next_line(fd);
+   str = get_next_line(*fd);
    while (str[x])
     x++;
    while (str)
     {
         free (str);
-        str = get_next_line(fd);
+        str = get_next_line(*fd);
         y++;   
     }
     free(str);
     data()->map.max_y = y;
     data()->map.max_x = x;
-    close(fd);
+    close(*fd);
 }
 
 void save_map(int map_nbr)
@@ -44,7 +44,7 @@ void save_map(int map_nbr)
     if (data()->map.map)
         free_array(data()->map.map);
     fd = open(data()->map_paths[map_nbr], O_RDONLY);
-    get_max_values(fd);
+    get_max_values(&fd);
     fd = open(data()->map_paths[map_nbr], O_RDONLY);
     data()->map.map = (char **)malloc(sizeof(char *) * (data()->map.max_y + 1));
     if (!data()->map.map)
