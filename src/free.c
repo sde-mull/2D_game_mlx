@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 22:13:11 by kuhaku            #+#    #+#             */
-/*   Updated: 2023/04/26 16:56:12 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:54:21 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,16 @@ void free_win(t_win *win)
 	int index;
 
 	index = 0;
-	// while (index < 5)
-	// {
-	// 	mlx_destroy_image(win->mlx, canvas()->background[index].mlx_img);
-	// 	index++;
-	// }
-	mlx_destroy_image(win->mlx, canvas()->background[index].mlx_img);
+	while (index < 6)
+	{
+		mlx_destroy_image(win->mlx, canvas()->player_right[index].mlx_img);
+		mlx_destroy_image(win->mlx, canvas()->player_left[index].mlx_img);
+		index++;
+	}
+	mlx_destroy_image(win->mlx, canvas()->player_normal_right.mlx_img);
+	mlx_destroy_image(win->mlx, canvas()->player_normal_left.mlx_img);
+	mlx_destroy_image(win->mlx, canvas()->background[0].mlx_img);
+	mlx_destroy_image(win->mlx, canvas()->tile.mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->resized_background.mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->game.mlx_img);
 	if (win->mlx_win)

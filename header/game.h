@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/26 16:51:24 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:55:59 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,10 @@ unsigned int	my_mlx_get_pixel(t_img *data, int x, int y);
 
 void create_background(void);
 void get_background(void);
+
+void paint_all();
+void paint_icon(t_img img, int pos_x, int pos_y);
+
+void get_tiles(void);
 
 #endif

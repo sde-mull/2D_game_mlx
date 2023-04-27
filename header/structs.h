@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:54:31 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/24 20:32:23 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:33:24 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,13 @@ typedef struct s_resize
 	int x;
 	int y;
 } t_resize;
+
+typedef struct s_player
+{
+	int start_x;
+	int start_y;
+	double pos_x;
+	double pos_y;
+}	t_player;
 
 #endif

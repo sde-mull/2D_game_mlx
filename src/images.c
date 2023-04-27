@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/26 16:56:54 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:53:29 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,36 @@ t_img	load_images(t_win *win, char *str)
 	return (img);
 }
 
-void	init_images(t_win *win)
+void	init_background(t_win *win)
 {
 	canvas()->background[0] = load_images(win, "images/xpm/background/final_battle1.xpm");
 	// canvas()->background[1] = load_images(win, "images/xpm/background/ice_battle1.xpm");
 	// canvas()->background[2] = load_images(win, "images/xpm/background/mid_battle1.xpm");
 	// canvas()->background[3] = load_images(win, "images/xpm/background/night_battle1.xpm");
 	// canvas()->background[4] = load_images(win, "images/xpm/background/start_battle1.xpm");
+}
+
+void	init_player(t_win *win)
+{
+	canvas()->player_normal_right = load_images(win, "images/xpm/player/sasuke/left/normal.xpm");
+	canvas()->player_normal_left  = load_images(win, "images/xpm/player/sasuke/right/normal.xpm");
+	canvas()->player_right[0] = load_images(win, "images/xpm/player/sasuke/right/walk/walk1.xpm");
+	canvas()->player_right[1] = load_images(win, "images/xpm/player/sasuke/right/walk/walk2.xpm");
+	canvas()->player_right[2] = load_images(win, "images/xpm/player/sasuke/right/walk/walk3.xpm");
+	canvas()->player_right[3] = load_images(win, "images/xpm/player/sasuke/right/walk/walk4.xpm");
+	canvas()->player_right[4] = load_images(win, "images/xpm/player/sasuke/right/walk/walk5.xpm");
+	canvas()->player_right[5] = load_images(win, "images/xpm/player/sasuke/right/walk/walk6.xpm");
+	canvas()->player_left[0] = load_images(win, "images/xpm/player/sasuke/left/walk/walk1.xpm");
+	canvas()->player_left[1] = load_images(win, "images/xpm/player/sasuke/left/walk/walk2.xpm");
+	canvas()->player_left[2] = load_images(win, "images/xpm/player/sasuke/left/walk/walk3.xpm");
+	canvas()->player_left[3] = load_images(win, "images/xpm/player/sasuke/left/walk/walk4.xpm");
+	canvas()->player_left[4] = load_images(win, "images/xpm/player/sasuke/left/walk/walk5.xpm");
+	canvas()->player_left[5] = load_images(win, "images/xpm/player/sasuke/left/walk/walk6.xpm");
+}
+void	init_images(t_win *win)
+{
+	init_background(win);
+	init_player(win);
+	canvas()->tile = load_images(win, "images/xpm/tiles/Tile.xpm");
+	
 }

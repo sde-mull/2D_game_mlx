@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:23:53 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 15:29:58 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:44:28 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int render(t_win *win)
     get_fps();
     if (data()->map.get_map_flag == 1)
         save_map(data()->map.map_nbr);
+	paint_all();
+	printf("x: %f ||| y: %f\n", objs()->player.pos_x, objs()->player.pos_y);
 	if (win->mlx_win)
 		mlx_put_image_to_window(win->mlx, win->mlx_win, canvas()->game.mlx_img, 0, 0);
     return (0);
