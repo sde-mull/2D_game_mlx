@@ -6,12 +6,18 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 16:52:24 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:14:00 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLASS_STRUCTS_H
 # define CLASS_STRUCTS_H
+
+typedef struct s_action
+{
+    int 	walk_action;
+    int     last_action;
+}   t_action;
 
 typedef struct s_data
 {
@@ -30,15 +36,15 @@ typedef struct s_canvas
     t_img background[5];
     t_img resized_background;
     t_img tile;
-    t_img player_right[6];
-    t_img player_left[6];
+    t_img player_walk_right[6];
+    t_img player_walk_left[6];
     t_img player_normal_left;
     t_img player_normal_right;
 }   t_canvas;
 
 typedef struct s_engine
 {
-    
+    t_keys keys;
 }   t_engine;
 
 typedef struct s_win
@@ -56,5 +62,6 @@ t_canvas    *canvas(void);
 t_data      *data(void);
 t_objects   *objs(void);
 t_engine    *eng(void);
+t_action    *act(void);
 
 #endif

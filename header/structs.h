@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:54:31 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 16:33:24 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:09:16 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,27 @@ typedef struct s_img
 
 typedef struct s_resize
 {
-	double rate_x;
-	double rate_y;
-	double paint_x;
-	double paint_y;
-	unsigned int color;
-	int x;
-	int y;
+	double 			rate_x;
+	double			rate_y;
+	double 			paint_x;
+	double 			paint_y;
+	unsigned int 	color;
+	int 			x;
+	int 			y;
 } t_resize;
 
 typedef struct s_player
 {
-	int start_x;
-	int start_y;
-	double pos_x;
-	double pos_y;
+	int 	start_x;
+	int 	start_y;
+	double	pos_x;
+	double 	pos_y;
 }	t_player;
+
+typedef struct s_keys
+{
+	int arr_left;
+	int arr_right;
+}	t_keys;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:35:17 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/21 19:14:51 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:09:53 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,11 @@ t_engine *eng(void)
 	static t_engine eng;
 
 	return (&eng);
+}
+
+t_action *act(void)
+{
+	static t_action act;
+
+	return (&act);
 }

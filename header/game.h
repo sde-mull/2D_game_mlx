@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 15:55:59 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:31:35 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void    get_fps();
 
 //key.c
 int scan_key(int keycode);
+int scan_key_release(int keycode);
 
 //save_map_information.c
 void get_max_values(int *fd);

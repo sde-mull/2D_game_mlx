@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:16:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 16:45:48 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:36:24 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void get_player(t_map map)
         {
             if (map.map[y][x] == 'P')
             {
-                objs()->player.start_x = x + 1;
-                objs()->player.start_y = y + 1;
+                objs()->player.start_x = x;
+                objs()->player.start_y = y;
             }
             x++;
         }
