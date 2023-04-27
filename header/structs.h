@@ -33,4 +33,15 @@ typedef struct s_img
 	int				imgy;
 }					t_img;
 
+typedef struct s_resize
+{
+	double rate_x;
+	double rate_y;
+	double paint_x;
+	double paint_y;
+	unsigned int color;
+	int x;
+	int y;
+} t_resize;
+
 #endif

@@ -16,8 +16,8 @@
 #define WIN_ERROR false
 #define WIN_SUCCESS true
 
-#define WIN_HEIGHT 992
-#define WIN_WIDTH 1920
+#define WIN_HEIGHT 640
+#define WIN_WIDTH 1280
 
 #define ICON 32
 

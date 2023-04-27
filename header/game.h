@@ -34,7 +34,7 @@ bool	init_window(t_win *win);
 void    window_management(void);
 
 //rendering.c
-int     render(void);
+int     render(t_win *win);
 void    get_fps();
 
 //key.c
@@ -61,5 +61,8 @@ int	    exit_game(void);
 
 void	        my_mlx_pixel_put(t_img *data, int x, int y, int color);
 unsigned int	my_mlx_get_pixel(t_img *data, int x, int y);
+
+void create_background(void);
+void get_background(void);
 
 #endif

@@ -34,9 +34,9 @@ t_img	load_images(t_win *win, char *str)
 
 void	init_images(t_win *win)
 {
-	canvas()->background[0] = load_images(win, "images/xpm/background/final_battle.xpm");
-	canvas()->background[1] = load_images(win, "images/xpm/background/ice_battle.xpm");
-	canvas()->background[2] = load_images(win, "images/xpm/background/mid_battle.xpm");
-	canvas()->background[3] = load_images(win, "images/xpm/background/night_battle.xpm");
-	canvas()->background[4] = load_images(win, "images/xpm/background/start_battle.xpm");
+	canvas()->background[0] = load_images(win, "images/xpm/background/final_battle1.xpm");
+	// canvas()->background[1] = load_images(win, "images/xpm/background/ice_battle1.xpm");
+	// canvas()->background[2] = load_images(win, "images/xpm/background/mid_battle1.xpm");
+	// canvas()->background[3] = load_images(win, "images/xpm/background/night_battle1.xpm");
+	// canvas()->background[4] = load_images(win, "images/xpm/background/start_battle1.xpm");
 }

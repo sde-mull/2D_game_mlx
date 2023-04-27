@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:21:18 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/26 19:21:15 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:30:07 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,14 @@ bool	init_window(t_win *win)
 	return (WIN_SUCCESS);
 }
 
-void render_background(void)
-{
-	
-}
-
 void window_management(void)
 {
     init_window(win());
 	init_images(win());
-	render_background();
     mlx_hook(win()->mlx_win , 17, 0, exit_game, NULL);
 	mlx_hook(win()->mlx_win, 2, 1L << 0, scan_key, NULL);
 	// mlx_hook(win()->mlx_win, 3, 1L << 1, scan_key_release, &win);
-	mlx_loop_hook(win()->mlx, &render, NULL);
+	mlx_loop_hook(win()->mlx, &render, win());
     mlx_loop(win()->mlx);
 	free_win(win());
 }

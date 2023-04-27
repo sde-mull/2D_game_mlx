@@ -57,4 +57,9 @@ void save_map(int map_nbr)
     if (canvas()->game.mlx_img)
         mlx_destroy_image(win()->mlx, canvas()->game.mlx_img);
     canvas()->game = new_image(win(), data()->map.max_x * ICON, data()->map.max_y * ICON);
+    if (canvas()->resized_background.mlx_img)
+        mlx_destroy_image(win()->mlx, canvas()->game.mlx_img);
+    canvas()->resized_background = new_image(win(), WIN_WIDTH, WIN_HEIGHT);
+    create_background();
+    get_background();
 }

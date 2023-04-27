@@ -28,6 +28,7 @@ typedef struct s_canvas
 {
     t_img game;
     t_img background[5];
+    t_img resized_background;
 }   t_canvas;
 
 typedef struct s_engine
