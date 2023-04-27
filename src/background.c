@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:29:24 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 15:30:12 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/27 21:40:54 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void get_background(void)
 {
 	int x;
 	int y;
-	unsigned int color;
+	int color;
 
 	y = 0;
 	while (y < WIN_HEIGHT)
@@ -25,7 +25,7 @@ void get_background(void)
 		while (x < WIN_WIDTH)
 		{
 			color = my_mlx_get_pixel(&canvas()->resized_background, x, y);
-			my_mlx_pixel_put(&canvas()->game, x, y, (int)color);
+			my_mlx_pixel_put(&canvas()->game, x, y, color);
 			x++;
 		}
 		y++;
