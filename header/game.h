@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 10:43:38 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:38:19 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,14 @@ void init_values(char **argv);
 t_img	load_images(t_win *win, char *str);
 t_img	new_image(t_win *win, int x, int y);
 void	init_images(t_win *win);
+void	sprite_left(t_win *win);
+void	sprite_right(t_win *win);
 
 //free.c
 void	free_array(char **arr);
 void    free_win(t_win *win);
 int	    exit_game(void);
+void    destroy_images(t_win *win);
 
 //my_mlx_func.c
 
@@ -75,5 +78,7 @@ void move(int x, int y);
 void check_movement(void);
 void gravity(t_player *player, double velocity);
 void jump(double height);
+
+void check_action(void);
 
 #endif

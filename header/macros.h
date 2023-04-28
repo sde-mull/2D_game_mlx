@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:27:44 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 19:03:50 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:54:12 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #define WIN_ERROR false
 #define WIN_SUCCESS true
 
-    #define WIN_HEIGHT 640
-    #define WIN_WIDTH 1280      
+#define WIN_HEIGHT 640
+#define WIN_WIDTH 1280      
 
 #define ICON 32
 

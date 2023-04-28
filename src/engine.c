@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 09:00:51 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 18:36:09 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:27:31 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void jump(double height)
 
 void gravity(t_player *player, double velocity)
 {
-    double temp_y;
+    double     temp_y;
     double     relative_position_x;
 
     temp_y = player->pos_y + velocity;

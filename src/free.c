@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 22:13:11 by kuhaku            #+#    #+#             */
-/*   Updated: 2023/04/28 18:22:49 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:38:02 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	exit_game(void)
 	return (0);
 }
 
-void free_win(t_win *win)
+void destroy_images(t_win *win)
 {
 	int index;
 
@@ -50,6 +50,11 @@ void free_win(t_win *win)
 	mlx_destroy_image(win->mlx, canvas()->tile.mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->resized_background.mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->game.mlx_img);
+}
+
+void free_win(t_win *win)
+{
+	destroy_images(win);
 	if (win->mlx_win)
 	{
 		mlx_destroy_window(win->mlx, win->mlx_win);
