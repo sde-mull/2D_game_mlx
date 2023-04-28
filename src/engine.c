@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 09:00:51 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 12:00:57 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:36:09 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@ void jump(double height)
 {
     double temp;
     double temp_x;
+    double relative_temp;
+    int     abs_temp;
 
     temp = objs()->player.pos_y - height;
-    if (data()->map.map[eng()->abs_pos_y  + 1][(int)objs()->player.pos_x + 1] == '2' \
-        && data()->map.map[eng()->abs_pos_y + 1][(int)objs()->player.pos_x - 1] == '0')
-            temp_x = 1;
-    if (data()->map.map[(int)temp][(int)(objs()->player.pos_x + (temp_x * 0.7))] != '2')
+    relative_temp = temp - temp;
+    if (relative_temp < 0.9)
+        abs_temp = floor((temp));
+    else
+        abs_temp = ceil(relative_temp);
+    if (data()->map.map[abs_temp][eng()->abs_pos_x] != '2')
         objs()->player.pos_y = temp;
     if (act()->jumping * height >= 3)
     {
@@ -35,18 +39,17 @@ void jump(double height)
 void gravity(t_player *player, double velocity)
 {
     double temp_y;
-    double temp_x;
-    int     add_space_left;
+    double     relative_position_x;
 
     temp_y = player->pos_y + velocity;
-    temp_x = 0;
-    add_space_left =  act()->last_action;
+    relative_position_x = objs()->player.pos_x - (int)objs()->player.pos_x;
+    if (relative_position_x < 0.5)
+        eng()->abs_pos_x = floor((objs()->player.pos_x));
+    else
+        eng()->abs_pos_x = ceil(objs()->player.pos_x);
     if ((int)temp_y >= data()->map.max_y - 1)
         exit_game();
-    if (data()->map.map[eng()->abs_pos_y + 1][(int)player->pos_x + 1] == '2' \
-        && data()->map.map[eng()->abs_pos_y + 1][(int)player->pos_x - 1] == '0')
-            temp_x = 1;
-    if (data()->map.map[(int)temp_y + 1][(int)(player->pos_x + (temp_x * 0.7))] != '2')
+    if (data()->map.map[(int)temp_y + 1][(int)(eng()->abs_pos_x)] != '2')
     {
         player->pos_y = temp_y;
         act()->falling = 1;
@@ -81,12 +84,14 @@ void move(int x, int y)
 	if (x > 0)
 	{
 		act()->last_action = 0;
-		paint_icon(canvas()->player_walk_right[act()->walk_action], objs()->player.pos_x * ICON, objs()->player.pos_y * ICON);
+        if (!act()->jumping && !act()->falling)
+		    paint_icon(canvas()->player_walk_right[act()->walk_action], objs()->player.pos_x * ICON, objs()->player.pos_y * ICON);
 	}
 	else
 	{
 		act()->last_action = 1;
-		paint_icon(canvas()->player_walk_left[act()->walk_action], objs()->player.pos_x * ICON, objs()->player.pos_y * ICON);
+        if (!act()->jumping && !act()->falling)
+		    paint_icon(canvas()->player_walk_left[act()->walk_action], objs()->player.pos_x * ICON, objs()->player.pos_y * ICON);
 	}
 }
 

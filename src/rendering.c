@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:23:53 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 11:00:50 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:54:36 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int render(t_win *win)
     get_fps();
     if (data()->map.get_map_flag == 1)
         save_map(data()->map.map_nbr);
+	if (eng()->keys.space == 1 && !act()->falling)
+		jump(0.06);
 	if (!act()->jumping)
 		gravity(&objs()->player, 0.06);
 	paint_all();

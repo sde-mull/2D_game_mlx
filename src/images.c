@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 20:52:26 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:21:51 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ void	init_player(t_win *win)
 	canvas()->player_walk_left[3] = load_images(win, "images/xpm/player/sasuke/left/walk/walk4.xpm");
 	canvas()->player_walk_left[4] = load_images(win, "images/xpm/player/sasuke/left/walk/walk5.xpm");
 	canvas()->player_walk_left[5] = load_images(win, "images/xpm/player/sasuke/left/walk/walk6.xpm");
+	canvas()->player_jumping[0] = load_images(win, "images/xpm/player/sasuke/left/jump_left.xpm");
+	canvas()->player_jumping[1] = load_images(win, "images/xpm/player/sasuke/right/jump_right.xpm");
+	canvas()->player_falling[0] = load_images(win, "images/xpm/player/sasuke/left/falling_left.xpm");
+	canvas()->player_falling[1] = load_images(win, "images/xpm/player/sasuke/right/falling_right.xpm");
 }
 void	init_images(t_win *win)
 {
