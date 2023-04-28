@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:21:18 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 21:33:03 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 09:35:03 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ void window_management(void)
 	mlx_hook(win()->mlx_win, 3, 1L << 1, scan_key_release, win());
 	mlx_loop_hook(win()->mlx, render, win());
     mlx_loop(win()->mlx);
-	free_win(win());
 }

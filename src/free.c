@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 22:13:11 by kuhaku            #+#    #+#             */
-/*   Updated: 2023/04/27 21:37:32 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 09:34:44 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,8 @@ void	free_array(char **arr)
 
 int	exit_game(void)
 {
-	if (win()->mlx_win)
-	{
-		// mlx_destroy_window(win()->mlx, win()->mlx_win);
-		// win()->mlx_win = NULL;
-		// exit(0);
-		mlx_loop_end(win()->mlx);
-		
-	}
+	free_win(win());
+	exit(0);
 	return (0);
 }
 

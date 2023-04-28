@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:29:39 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 19:32:02 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 10:37:19 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int scan_key(int keycode)
         eng()->keys.arr_left = 1;
     if (keycode == ARROW_RIGHT)
         eng()->keys.arr_right = 1;
+    if (!act()->falling && keycode == SPACE)
+        eng()->keys.space = 1;
     return (0);
 }

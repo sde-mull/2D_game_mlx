@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 19:31:35 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 10:43:38 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,10 @@ void paint_all();
 void paint_icon(t_img img, int pos_x, int pos_y);
 
 void get_tiles(void);
+
+void move(int x, int y);
+void check_movement(void);
+void gravity(t_player *player, double velocity);
+void jump(double height);
 
 #endif

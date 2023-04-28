@@ -6,7 +6,7 @@
 #    By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 16:25:02 by pcoimbra          #+#    #+#              #
-#    Updated: 2023/04/27 19:46:27 by sde-mull         ###   ########.fr        #
+#    Updated: 2023/04/28 09:01:58 by sde-mull         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ FT_INCLUDE 	= 	-Ilibft -Llibft -lft
 SRC_DIR		=	src/
 SRCS		=	game.c init_structs.c rendering.c window.c keys.c \
 				save_map_information.c init_values.c images.c free.c my_mlx_func.c \
-				background.c tile.c paint.c
+				background.c tile.c paint.c engine.c
 
 GNL_DIR		=	gnl
 GNL			=	$(GNL_DIR)/get_next_line.c $(GNL_DIR)/get_next_line_utils.c

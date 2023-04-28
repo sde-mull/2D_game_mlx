@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/27 20:14:00 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/04/28 11:56:50 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ typedef struct s_action
 {
     int 	walk_action;
     int     last_action;
+    int     falling;
+    int     jumping;
+    int     walk_left;
+    int     walk_right;
 }   t_action;
 
 typedef struct s_data
@@ -45,6 +49,8 @@ typedef struct s_canvas
 typedef struct s_engine
 {
     t_keys keys;
+    int abs_pos_y;
+    int abs_pos_x;
 }   t_engine;
 
 typedef struct s_win
