@@ -6,12 +6,24 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:54:31 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 10:21:18 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/02 22:59:38 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
+
+typedef struct s_box
+{
+	double normal_x;
+	double normal_y;
+	double right_x;
+	double right_y;
+	double down_x;
+	double down_y;
+	double right_down_x;
+	double right_down_y;
+}	t_box;
 
 typedef struct s_map
 {
@@ -50,6 +62,7 @@ typedef struct s_player
 	int 	start_y;
 	double	pos_x;
 	double 	pos_y;
+	t_box	P_box;
 }	t_player;
 
 typedef struct s_keys
@@ -58,5 +71,6 @@ typedef struct s_keys
 	int arr_right;
 	int space;
 }	t_keys;
+
 
 #endif
