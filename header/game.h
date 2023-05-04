@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 22:38:19 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:06:02 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,11 @@ void gravity(t_player *player, double velocity);
 void jump(double height);
 
 void check_action(void);
+void action_movement(void);
+void action_jumping(void);
+void action_falling(void);
+void action_standard(void);
+
+void get_hit_box(t_player *player);
 
 #endif

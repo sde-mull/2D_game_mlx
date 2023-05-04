@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 18:19:31 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/04 18:25:55 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_data
 typedef struct s_objects
 {
     t_player player;
+    t_player temp_player;
 } t_objects;
 
 typedef struct s_canvas

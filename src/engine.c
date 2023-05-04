@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 09:00:51 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/02 23:16:01 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:56:33 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,42 +58,24 @@
 //         act()->falling = 0;
 // }
 
-// void move(int x, int y)
-// {
-// 	double temp;
-//     int     flg;
-//     int     confirm_pos;
-//     double     relative_position_y;
 
-// 	temp = objs()->player.pos_x + (x * 0.06);
-//     confirm_pos = x > 0;
-//     relative_position_y = objs()->player.pos_y - (int)objs()->player.pos_y;
-//     if (relative_position_y < 0.5)
-//         eng()->abs_pos_y = floor((objs()->player.pos_y));
-//     else
-//         eng()->abs_pos_y = ceil(objs()->player.pos_y);
-//     flg = data()->map.map[eng()->abs_pos_y][(int)temp + confirm_pos] != '2';
-// 	if (temp > 0 && temp < data()->map.max_x - 1 && flg)
-// 		    objs()->player.pos_x = temp;
-// 	else if ((temp <= 0 && x > 0) || (temp >= data()->map.max_x - 1 && x < 0) && flg)
-// 		    objs()->player.pos_x = temp;
-// 	if (act()->walk_action < 5)
-// 		act()->walk_action++;
-// 	else
-// 		act()->walk_action = 0;
-// 	if (x > 0)
-// 	{
-// 		act()->last_action = 0;
-//         if (!act()->jumping && !act()->falling)
-// 		    paint_icon(canvas()->player_walk_right[act()->walk_action], objs()->player.pos_x * ICON, objs()->player.pos_y * ICON);
-// 	}
-// 	else
-// 	{
-// 		act()->last_action = 1;
-//         if (!act()->jumping && !act()->falling)
-// 		    paint_icon(canvas()->player_walk_left[act()->walk_action], objs()->player.pos_x * ICON, objs()->player.pos_y * ICON);
-// 	}
-// }
+void gravity(t_player *player, double velocity)
+{
+	player->pos_y = player->pos_y + velocity;
+}
+
+void move(int x, int y)
+{
+	objs()->temp_player.pos_x = objs()->temp_player.pos_x + (x * 0.06);
+	if (act()->walk_action < 5)
+		act()->walk_action++;
+	else
+		act()->walk_action = 0;
+	if (x > 0)
+		act()->last_action = 0;
+	else
+		act()->last_action = 1;
+}
 
 void check_movement(void)
 {

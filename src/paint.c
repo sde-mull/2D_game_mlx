@@ -6,11 +6,32 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:53:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/02 23:15:11 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/04 21:05:42 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/game.h"
+
+void paint_hit_box(t_box box)
+{
+	my_mlx_pixel_put(&canvas()->game, box.normal_x * 32, box.normal_y * 32, 0xFFFFFF);
+	my_mlx_pixel_put(&canvas()->game, box.down_x * 32, box.down_y * 32, 0xFFFFFF);
+	my_mlx_pixel_put(&canvas()->game, box.right_down_x * 32, box.right_down_y * 32, 0xFFFFFF);
+	my_mlx_pixel_put(&canvas()->game, box.right_x * 32, box.right_y * 32, 0xFFFFFF);
+}
+
+int check_walls(t_box box)
+{
+	char **map;
+	
+	map = data()->map.map;
+	paint_hit_box(box);
+	if (map[(int)box.normal_y][(int)box.normal_x] != '2' && map[(int)box.down_y][(int)box.down_x] != '2'&& \
+		map[(int)(box.right_down_y - 1)][(int)box.right_down_x] != '2' && map[(int)(box.right_y - 1)][(int)box.right_x] != '2' &&\
+		box.normal_x > 0  && box.right_x < data()->map.max_x)
+			return (1);
+	return (0);
+}
 
 void paint_icon(t_img img, int pos_x, int pos_y)
 {
@@ -38,5 +59,8 @@ void paint_all()
 	get_background();
 	get_tiles();
    	check_movement();
+	get_hit_box(&objs()->temp_player);
+	if (check_walls(objs()->temp_player.P_box))
+		objs()->player = objs()->temp_player;
 	check_action();
 }
