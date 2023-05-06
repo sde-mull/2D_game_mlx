@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/04 20:06:02 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/05 17:53:57 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ void paint_icon(t_img img, int pos_x, int pos_y);
 
 void get_tiles(void);
 
-void move(int x, int y);
+void move(int x, int y, t_player *player);
 void check_movement(void);
 void gravity(t_player *player, double velocity);
-void jump(double height);
+void jump(double height, t_player *player);
 
 void check_action(void);
 void action_movement(void);
@@ -86,5 +86,6 @@ void action_falling(void);
 void action_standard(void);
 
 void get_hit_box(t_player *player);
+int check_walls(t_box box);
 
 #endif

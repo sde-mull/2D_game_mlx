@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 22:29:10 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/05 23:55:54 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ t_img	load_images(t_win *win, char *str)
 
 void	init_background(t_win *win)
 {
-	canvas()->tile = load_images(win, "images/xpm/tiles/Tile.xpm");
+	canvas()->tile_surface = load_images(win, "images/xpm/tiles/Tile_surface.xpm");
+	canvas()->tile_underground = load_images(win, "images/xpm/tiles/Tile_underground.xpm");
 	canvas()->background[0] = load_images(win, "images/xpm/background/final_battle1.xpm");
 	//canvas()->background[1] = load_images(win, "images/xpm/background/ice_battle1.xpm");
 	// canvas()->background[2] = load_images(win, "images/xpm/background/mid_battle1.xpm");
@@ -68,6 +69,14 @@ void	sprite_right(t_win *win)
 	canvas()->player_normal_right = load_images(win, "images/xpm/player/sasuke/right/normal_right.xpm");
 }
 
+void	init_lava(t_win *win)
+{
+	canvas()->lava[0] = load_images(win, "images/xpm/lava/lava1.xpm");
+	canvas()->lava[1] = load_images(win, "images/xpm/lava/lava2.xpm");
+	canvas()->lava[2] = load_images(win, "images/xpm/lava/lava3.xpm");
+	canvas()->lava[3] = load_images(win, "images/xpm/lava/lava4.xpm");
+}
+
 void	init_player(t_win *win)
 {
 	sprite_left(win);
@@ -76,5 +85,6 @@ void	init_player(t_win *win)
 void	init_images(t_win *win)
 {
 	init_background(win);
+	init_lava(win);
 	init_player(win);
 }
