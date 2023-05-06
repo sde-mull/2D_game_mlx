@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 09:00:51 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 21:05:13 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/07 00:01:34 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,20 @@ void move(int x, int y, t_player *player)
 		act()->last_action = 1;
 }
 
-void check_collected(void)
+void check_collected(int x, int y)
 {
-	if (data()->map.map[(int)objs()->player.pos_y][(int)objs()->player.pos_x] == 'C')
-		data()->map.map[(int)objs()->player.pos_y][(int)objs()->player.pos_x] = '0';
+	if (data()->map.map[y][x] == 'C')
+	{
+		data()->map.map[y][x] = '0';
+		data()->collected += 1;
+	}
+}
+
+void check_enter(void)
+{
+	if (data()->map.map[(int)objs()->player.pos_y - 1][(int)objs()->player.pos_x] == 'E' && \
+		data()->max_coll == data()->collected)
+			exit_game();
 }
 
 void check_movement(void)
@@ -84,4 +94,6 @@ void check_movement(void)
 		move(-1, 0, &objs()->player);
 	if (eng()->keys.arr_right == 1)
 		move(1, 0, &objs()->player);
+	if (eng()->keys.arr_up == 1)
+		check_enter();
 }

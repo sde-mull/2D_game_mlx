@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:16:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 03:08:51 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 23:47:34 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void get_player(t_map map)
                 objs()->player.start_x = x;
                 objs()->player.start_y = y;
             }
+            if (map.map[y][x] == 'C')
+                data()->max_coll += 1;
             x++;
         }
         y++;

@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:54:31 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/04 19:40:57 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 23:53:25 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct s_keys
 	int arr_left;
 	int arr_right;
 	int space;
+	int arr_up;
 }	t_keys;
 
 

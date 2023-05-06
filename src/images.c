@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 20:20:28 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 23:27:54 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,16 @@ void	init_coin(t_win *win)
 	canvas()->coin[7] = load_images(win, "images/xpm/collectible/coin8.xpm");
 }
 
+void	init_door(t_win *win)
+{
+	canvas()->door[0] = load_images(win, "images/xpm/door/door1.xpm");
+	canvas()->door[1] = load_images(win, "images/xpm/door/door2.xpm");
+	canvas()->door[2] = load_images(win, "images/xpm/door/door3.xpm");
+	canvas()->door[3] = load_images(win, "images/xpm/door/door4.xpm");
+	canvas()->door[4] = load_images(win, "images/xpm/door/door5.xpm");
+	canvas()->door[5] = load_images(win, "images/xpm/door/door6.xpm");
+}
+
 void	init_player(t_win *win)
 {
 	sprite_left(win);
@@ -100,4 +110,5 @@ void	init_images(t_win *win)
 	init_coin(win);
 	init_lava(win);
 	init_player(win);
+	init_door(win);
 }

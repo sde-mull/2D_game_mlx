@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/05 17:53:57 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 22:45:57 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,5 @@ void action_standard(void);
 void get_hit_box(t_player *player);
 int check_walls(t_box box);
 
+void check_collected(int x, int y);
 #endif
