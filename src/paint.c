@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:53:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 02:35:10 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 21:06:36 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void paint_icon(t_img img, int pos_x, int pos_y)
 	unsigned int color;
 
 	y = 0;
-	while (y < ICON)
+	while (y < ICON && y < img.imgy)
 	{
 		x = 0;
-		while (x < ICON)
+		while (x < ICON && x < img.imgx)
 		{
 			color = my_mlx_get_pixel(&img, x, y);
             if (color)
@@ -53,11 +53,10 @@ void paint_icon(t_img img, int pos_x, int pos_y)
 	}	
 }
 
-void paint_lava()
+void paint_lava_coin()
 {
 	int x;
 	int y;
-	static int count;
 	
 	y = 0;
 	while (y < data()->map.max_y)
@@ -67,12 +66,21 @@ void paint_lava()
 		{
 			if (data()->map.map[y][x] == 'L')
 				paint_icon(canvas()->lava[act()->lava], x * ICON, y * ICON);
+			else if (data()->map.map[y][x] == 'C')
+				paint_icon(canvas()->coin[act()->coin], x * ICON, y * ICON);
 			x++;
 		}
 		y++;
 	}
+	
+}
+
+void animate_lava(void)
+{
+	static int count;
+
 	count++;
-	if (count == 75)
+	if (count == 50)
 	{
 		act()->lava++;
 		count = 0;
@@ -81,11 +89,28 @@ void paint_lava()
 		act()->lava = 0;
 }
 
+void animate_coin()
+{
+	static int count;
+
+	count++;
+	if (count == 20)
+	{
+		act()->coin++;
+		count = 0;
+	}
+	if (act()->coin == 7)
+		act()->coin = 0;
+}
+
 void paint_all()
 {
+	check_collected();
 	check_movement();
 	get_background();
 	get_tiles();
-	paint_lava();
+	paint_lava_coin();
+	animate_lava();
+	animate_coin();
 	check_action();
 }

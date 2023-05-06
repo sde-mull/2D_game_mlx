@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 09:00:51 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 00:43:04 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 21:05:13 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,7 @@ void move(int x, int y, t_player *player)
 	temp.pos_x = temp.pos_x + (x * 0.06);
 	get_hit_box(&temp);
 	if (check_walls(temp.P_box))
-	{
 		objs()->player = temp;
-		act()->hit_wall = 0;
-	}
 	if (act()->walk_action < 5)
 		act()->walk_action++;
 	else
@@ -73,6 +70,12 @@ void move(int x, int y, t_player *player)
 		act()->last_action = 0;
 	else
 		act()->last_action = 1;
+}
+
+void check_collected(void)
+{
+	if (data()->map.map[(int)objs()->player.pos_y][(int)objs()->player.pos_x] == 'C')
+		data()->map.map[(int)objs()->player.pos_y][(int)objs()->player.pos_x] = '0';
 }
 
 void check_movement(void)

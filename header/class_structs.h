@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 02:39:50 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 20:36:32 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ typedef struct s_action
     int     walk_left;
     int     walk_right;
     int     lava;
-    int     hit_wall;
-    int     mid_air;
+    int     coin;
 }   t_action;
 
 typedef struct s_data
@@ -51,6 +50,7 @@ typedef struct s_canvas
     t_img player_jumping[2];
     t_img player_falling[2];
     t_img lava[4];
+    t_img coin[8];
 }   t_canvas;
 
 typedef struct s_engine

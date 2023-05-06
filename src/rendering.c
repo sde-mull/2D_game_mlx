@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:23:53 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 03:10:23 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 20:38:40 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,25 @@ void recenter_camera(void)
 	}
 }
 
+void cap_fps(int cap)
+{
+	struct timeval time;
+	
+	const int FPS_CAP = cap;
+    const int US_PER_FRAME = 1000000 / FPS_CAP;
+    static struct timeval last_frame_time = {0};
+    gettimeofday(&time, NULL);
+    long elapsed_time = (time.tv_sec - last_frame_time.tv_sec) * 1000000 +
+                         time.tv_usec - last_frame_time.tv_usec;
+    if (elapsed_time < US_PER_FRAME) {
+        usleep(US_PER_FRAME - elapsed_time);
+    }
+    last_frame_time = time;
+}
+
 int render(t_win *win)
 {
+
     get_fps();
     if (data()->map.get_map_flag == 1)
         save_map(data()->map.map_nbr);
@@ -64,5 +81,6 @@ int render(t_win *win)
 	paint_all();
 	recenter_camera();
 	mlx_put_image_to_window(win->mlx, win->mlx_win, canvas()->game.mlx_img, -win->redirection, 0);
+	cap_fps(120);
     return (0);
 }
