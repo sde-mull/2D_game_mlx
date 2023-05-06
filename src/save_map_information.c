@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:16:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/04 18:29:47 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 03:08:51 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void get_max_values(int *fd)
     }
     free(str);
     data()->map.max_y = y - 1;
-    data()->map.max_x = x;
+    data()->map.max_x = x - 1;
     close(*fd);
 }
 
@@ -81,7 +81,7 @@ void save_map(int map_nbr)
     get_player(data()->map);
     if (canvas()->game.mlx_img)
         mlx_destroy_image(win()->mlx, canvas()->game.mlx_img);
-    canvas()->game = new_image(win(), data()->map.max_x * ICON, data()->map.max_y * ICON);
+    canvas()->game = new_image(win(), (data()->map.max_x) * ICON, data()->map.max_y * ICON);
     if (canvas()->resized_background.mlx_img)
         mlx_destroy_image(win()->mlx, canvas()->game.mlx_img);
     canvas()->resized_background = new_image(win(), WIN_WIDTH, WIN_HEIGHT);

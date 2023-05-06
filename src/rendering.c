@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:23:53 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 00:31:27 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 03:10:23 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,17 @@ void get_hit_box(t_player *player)
 	player->P_box.right_down_y = player->pos_y + 0.95;
 }
 
+void recenter_camera(void)
+{
+	if (((int)objs()->player.pos_x + 24) < data()->map.max_x)
+	{
+		if (((objs()->player.pos_x - 16)) > 0)
+			win()->redirection = (objs()->player.pos_x - 16) * 32;
+		else
+			win()->redirection = 0;
+	}
+}
+
 int render(t_win *win)
 {
     get_fps();
@@ -51,6 +62,7 @@ int render(t_win *win)
 	if (!act()->jumping)
 		gravity(&objs()->player, 0.06);
 	paint_all();
-	mlx_put_image_to_window(win->mlx, win->mlx_win, canvas()->game.mlx_img, 0, 0);
+	recenter_camera();
+	mlx_put_image_to_window(win->mlx, win->mlx_win, canvas()->game.mlx_img, -win->redirection, 0);
     return (0);
 }

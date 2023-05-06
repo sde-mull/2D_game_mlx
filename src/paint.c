@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:53:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 00:43:34 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 02:35:10 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ void paint_lava()
 
 void paint_all()
 {
+	check_movement();
 	get_background();
 	get_tiles();
 	paint_lava();
-	check_movement();
 	check_action();
 }

@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 00:20:54 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/06 02:39:50 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ typedef struct s_win
     void			*mlx;
 	void			*mlx_win;
 	int				w;
-	int				h;   
+	int				h;
+    int             redirection; 
 }   t_win;
 
 //functions
