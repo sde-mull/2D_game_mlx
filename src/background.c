@@ -6,28 +6,25 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:29:24 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 02:46:09 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/07 22:00:36 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/game.h"
 
+
 void get_background(void)
 {
-	int x;
-	int y;
-	int color;
+	char	*src;
+	char	*dst;
+	int		y;
 
 	y = 0;
-	while (y < WIN_HEIGHT)
+	while(y < WIN_HEIGHT) 
 	{
-		x = 0;
-		while (x < WIN_WIDTH)
-		{
-			color = my_mlx_get_pixel(&canvas()->resized_background, x, y);
-			my_mlx_pixel_put(&canvas()->game, win()->redirection + x, y, color);
-			x++;
-		}
+    	src = (char*)canvas()->resized_background.addr + y * canvas()->resized_background.line_len;
+   		dst = (char*)canvas()->game.addr + y * canvas()->game.line_len + win()->redirection * canvas()->game.bpp / 8;
+   		memcpy(dst, src, WIN_WIDTH * canvas()->resized_background.bpp / 8);
 		y++;
 	}
 }

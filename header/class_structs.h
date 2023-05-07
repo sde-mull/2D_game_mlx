@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 23:44:10 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:55:54 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ typedef struct s_canvas
 typedef struct s_engine
 {
     t_keys keys;
-    int abs_pos_y;
-    int abs_pos_x;
 }   t_engine;
 
 typedef struct s_win

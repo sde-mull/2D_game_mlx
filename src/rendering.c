@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:23:53 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 20:38:40 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:58:03 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ int render(t_win *win)
 	paint_all();
 	recenter_camera();
 	mlx_put_image_to_window(win->mlx, win->mlx_win, canvas()->game.mlx_img, -win->redirection, 0);
-	cap_fps(120);
+	// cap_fps(120);
     return (0);
 }
