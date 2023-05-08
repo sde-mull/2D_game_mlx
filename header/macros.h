@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:27:44 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/04/28 21:54:12 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 00:47:26 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 #define WIN_WIDTH 1280      
 
 #define ICON 32
+#define X_MARGIN 0.1
 
 #endif

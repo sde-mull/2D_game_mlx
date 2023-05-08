@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:16:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 23:47:34 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 01:46:35 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void get_max_values(int *fd)
     close(*fd);
 }
 
-void get_player(t_map map)
+void get_player(t_map map, t_player *player)
 {
     int x;
     int y;
@@ -48,8 +48,8 @@ void get_player(t_map map)
         {
             if (map.map[y][x] == 'P')
             {
-                objs()->player.start_x = x;
-                objs()->player.start_y = y;
+                player->start_x = x;
+                player->start_y = y;
             }
             if (map.map[y][x] == 'C')
                 data()->max_coll += 1;
@@ -57,8 +57,8 @@ void get_player(t_map map)
         }
         y++;
     }
-    objs()->player.pos_x = objs()->player.start_x;
-    objs()->player.pos_y = objs()->player.start_y;
+    player->pos_x = player->start_x;
+    player->pos_y = player->start_y;
 }
 
 void save_map(int map_nbr)
@@ -80,7 +80,7 @@ void save_map(int map_nbr)
     data()->map.map[y] = 0;
     data()->map.get_map_flag = 0;
     close(fd);
-    get_player(data()->map);
+    get_player(data()->map, &objs()->player);
     if (canvas()->game.mlx_img)
         mlx_destroy_image(win()->mlx, canvas()->game.mlx_img);
     canvas()->game = new_image(win(), (data()->map.max_x) * ICON, data()->map.max_y * ICON);

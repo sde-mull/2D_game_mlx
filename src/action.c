@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 22:10:28 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/04 19:29:46 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 00:12:25 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,4 @@ void action_standard(void)
 			else if (act()->last_action == 1)
 				paint_icon(canvas()->player_normal_left, objs()->player.pos_x * ICON, objs()->player.pos_y * ICON);
 	}
-}
-
-void check_action(void)
-{
-	action_standard();
-	action_falling();
-	action_jumping();
-	if (!act()->jumping && !act()->falling && (eng()->keys.arr_left != 0 || eng()->keys.arr_right != 0) && \
-		(eng()->keys.arr_left != 1 || eng()->keys.arr_right != 1))
-		action_movement();
 }
