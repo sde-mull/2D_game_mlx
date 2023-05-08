@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 21:35:43 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 22:50:25 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void 			animate_lava(int *lava);
 void 			animate_door(int coll, int max, int *door);
 void 			animate_coin(int *coin);
 void            animate_player(int *player);
+void            animate_walk(int *walk);
 
 //background.c
 void 			get_background(void);
@@ -53,6 +54,7 @@ void 			check_enter(t_data *data, t_player player);
 void 			check_movement(t_player *player);
 void 			check_action(t_keys keys);
 int  			check_walls(t_box box, t_map map);
+int             check_gravity(t_box box, t_map map);
 
 //engine.c
 void 			engine(void);

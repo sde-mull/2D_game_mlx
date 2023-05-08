@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 09:00:51 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 01:20:25 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 22:51:46 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void gravity(t_player *player, double velocity, t_map map)
 	temp = *player;
 	temp.pos_y = temp.pos_y + velocity;
 	get_hit_box(&temp);
-	if (check_walls(temp.P_box, map))
+	if (check_gravity(temp.P_box, map))
 	{
 		if (temp.P_box.right_down_y >= map.max_y - 0.1 || \
 			temp.P_box.down_y >= map.max_y - 0.1 || \
@@ -74,10 +74,7 @@ void move(int x, int y, t_player *player)
 	get_hit_box(&temp);
 	if (check_walls(temp.P_box, data()->map))
 		objs()->player = temp;
-	if (act()->walk_action < 5)
-		act()->walk_action++;
-	else
-		act()->walk_action = 0;
+	animate_walk(&act()->walk_action);
 	if (x > 0)
 		act()->last_action = 0;
 	else

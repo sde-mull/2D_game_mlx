@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:53:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 21:50:39 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 22:36:32 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void paint_hit_box(t_box box)
 	my_mlx_pixel_put(&canvas()->game, box.down_x * ICON, box.down_y * ICON, 0xFFFFFF);
 	my_mlx_pixel_put(&canvas()->game, box.right_down_x * ICON, box.right_down_y * ICON, 0xFFFFFF);
 	my_mlx_pixel_put(&canvas()->game, box.right_x * ICON, box.right_y * ICON, 0xFFFFFF);
+	my_mlx_pixel_put(&canvas()->game, box.m_down_x * ICON, box.m_down_y * ICON, 0xFFFFFF);
+	my_mlx_pixel_put(&canvas()->game, box.mr_down_x * ICON, box.mr_down_y * ICON, 0xFFFFFF);
 }
 
 void paint_icon(t_img img, int pos_x, int pos_y)

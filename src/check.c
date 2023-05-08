@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:06:27 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 01:09:11 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 23:08:20 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void check_collected(int x, int y, char **map)
 
 void check_enter(t_data *data, t_player player)
 {
-	if (data->map.map[(int)player.pos_y - 1][(int)player.pos_x] == 'E' && \
+	if (data->map.map[(int)player.pos_y][(int)player.pos_x] == 'E' && \
 		data->max_coll == data->collected)
 			exit_game();
 }
@@ -49,13 +49,26 @@ void check_action(t_keys keys)
 		action_movement();
 }
 
+int check_gravity(t_box box, t_map map)
+{
+	if (map.map[(int)(box.down_y)][(int)(box.down_x - X_MARGIN)] != '2'&& \
+		map.map[(int)(box.right_down_y)][(int)(box.right_down_x + X_MARGIN)] != '2' && \
+		box.normal_x > 0  && box.right_x < map.max_x && box.normal_y > 0 && box.right_y > 0 && \
+		box.m_down_x > 0 && box.mr_down_x < map.max_x)
+			return (1);
+		return (0);
+}
+
 int check_walls(t_box box, t_map map)
 {
 	if (map.map[(int)box.normal_y][(int)(box.normal_x - X_MARGIN)] != '2' && \
 		map.map[(int)(box.down_y)][(int)(box.down_x - X_MARGIN)] != '2'&& \
+		map.map[(int)(box.m_down_y)][(int)(box.m_down_x - X_MARGIN)] != '2' && \
+		map.map[(int)(box.mr_down_y)][(int)(box.mr_down_x + X_MARGIN)] != '2'&&\
 		map.map[(int)(box.right_down_y)][(int)(box.right_down_x + X_MARGIN)] != '2' && \
 		map.map[(int)(box.right_y)][(int)(box.right_x + X_MARGIN)] != '2' &&\
-		box.normal_x > 0  && box.right_x < map.max_x && box.normal_y > 0 && box.right_y > 0)
+		box.normal_x > 0  && box.right_x < map.max_x && box.normal_y > 0 && box.right_y > 0 && \
+		box.m_down_x > 0 && box.mr_down_x < map.max_x)
 			return (1);
 	return (0);
 }

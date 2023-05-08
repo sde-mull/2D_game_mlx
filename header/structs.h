@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:54:31 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 23:53:25 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 22:05:25 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ typedef struct s_box
 	double normal_y;
 	double right_x;
 	double right_y;
+	double m_down_y;
+	double m_down_x;
+	double mr_down_y; //midle right -> mr
+	double mr_down_x;
 	double down_x;
 	double down_y;
 	double right_down_x;

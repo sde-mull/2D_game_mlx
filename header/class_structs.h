@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 21:36:22 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 22:51:31 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ typedef struct s_action
     int     last_action;
     int     falling;
     int     jumping;
-    int     walk_left;
-    int     walk_right;
     int     lava;
     int     coin;
     int     door;

@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:13:23 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 21:47:53 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 22:52:27 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,26 @@ void animate_door(int coll, int max, int *door)
 	}
 }
 
+void animate_walk(int *walk)
+{
+	static int count;
+
+	count++;
+	if (count == 10)
+	{
+		(*walk)++;
+		count = 0;
+	}
+	if (*walk == 6)
+		*walk = 0;
+}
+
 void animate_player(int *player)
 {
 	static int count;
 
 	count++;
-	if (count == 20)
+	if (count == 50)
 	{
 		(*player)++;
 		count = 0;

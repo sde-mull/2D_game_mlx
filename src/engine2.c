@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:10:59 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 01:19:41 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 23:04:36 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,17 @@ void get_fps()
 void get_hit_box(t_player *player)
 {
 	player->P_box.normal_x = player->pos_x + 0.1;
-	player->P_box.normal_y = player->pos_y + 0.05;
-	player->P_box.right_x = player->pos_x + 0.90;
-	player->P_box.right_y = player->pos_y + 0.05;
-	player->P_box.down_x = player->pos_x + 0.1;
-	player->P_box.down_y = player->pos_y + 0.95;
-	player->P_box.right_down_x = player->pos_x + 0.90;
-	player->P_box.right_down_y = player->pos_y + 0.95;
+	player->P_box.normal_y = player->pos_y;
+	player->P_box.m_down_x = player->pos_x + 0.10;
+	player->P_box.m_down_y = player->pos_y + 0.90;
+	player->P_box.mr_down_x = player->pos_x + 0.85;
+	player->P_box.mr_down_y = player->pos_y + 0.85;
+	player->P_box.right_x = player->pos_x + 0.85;
+	player->P_box.right_y = player->pos_y;
+	player->P_box.down_x = player->pos_x + 0.10;
+	player->P_box.down_y = player->pos_y + 1.50;
+	player->P_box.right_down_x = player->pos_x + 0.85;
+	player->P_box.right_down_y = player->pos_y + 1.50;
 }
 
 void recenter_camera(t_player player)
