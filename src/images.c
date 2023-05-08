@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/06 23:27:54 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:33:27 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	init_background(t_win *win)
 
 void	sprite_left(t_win *win)
 {
-	canvas()->player_normal_left  = load_images(win, "images/xpm/player/sasuke/left/normal_left.xpm");
+	canvas()->player_normal_left[0]  = load_images(win, "images/xpm/player/sasuke/left/normal_left.xpm");
+	canvas()->player_normal_left[1]  = load_images(win, "images/xpm/player/sasuke/left/normal_left2.xpm");
 	canvas()->player_walk_left[0] = load_images(win, "images/xpm/player/sasuke/left/walk/walk1.xpm");
 	canvas()->player_walk_left[1] = load_images(win, "images/xpm/player/sasuke/left/walk/walk2.xpm");
 	canvas()->player_walk_left[2] = load_images(win, "images/xpm/player/sasuke/left/walk/walk3.xpm");
@@ -66,7 +67,8 @@ void	sprite_right(t_win *win)
 	canvas()->player_walk_right[5] = load_images(win, "images/xpm/player/sasuke/right/walk/walk6.xpm");
 	canvas()->player_falling[1] = load_images(win, "images/xpm/player/sasuke/right/falling_right.xpm");
 	canvas()->player_jumping[1] = load_images(win, "images/xpm/player/sasuke/right/jump_right.xpm");
-	canvas()->player_normal_right = load_images(win, "images/xpm/player/sasuke/right/normal_right.xpm");
+	canvas()->player_normal_right[0] = load_images(win, "images/xpm/player/sasuke/right/normal_right.xpm");
+	canvas()->player_normal_right[1] = load_images(win, "images/xpm/player/sasuke/right/normal_right2.xpm");
 }
 
 void	init_lava(t_win *win)

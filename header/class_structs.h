@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/07 20:55:54 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:36:22 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_action
     int     lava;
     int     coin;
     int     door;
+    int     player;
 }   t_action;
 
 typedef struct s_data
@@ -48,8 +49,8 @@ typedef struct s_canvas
     t_img tile_underground;
     t_img player_walk_right[6];
     t_img player_walk_left[6];
-    t_img player_normal_left;
-    t_img player_normal_right;
+    t_img player_normal_left[2];
+    t_img player_normal_right[2];
     t_img player_jumping[2];
     t_img player_falling[2];
     t_img lava[4];

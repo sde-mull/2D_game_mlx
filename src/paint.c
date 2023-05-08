@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:53:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 01:49:39 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:50:39 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ void paint()
 	get_background();
 	get_tiles(data()->map);
 	paint_objects(data()->map, *canvas(), *act());
+	// paint_hit_box(objs()->player.P_box);
 }

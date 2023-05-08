@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 22:13:11 by kuhaku            #+#    #+#             */
-/*   Updated: 2023/05/08 01:37:43 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:33:41 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ void destroy_images(t_win *win)
 	mlx_destroy_image(win->mlx, canvas()->player_jumping[0].mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->player_falling[1].mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->player_jumping[1].mlx_img);
-	mlx_destroy_image(win->mlx, canvas()->player_normal_right.mlx_img);
-	mlx_destroy_image(win->mlx, canvas()->player_normal_left.mlx_img);
+	mlx_destroy_image(win->mlx, canvas()->player_normal_right[0].mlx_img);
+	mlx_destroy_image(win->mlx, canvas()->player_normal_left[0].mlx_img);
+	mlx_destroy_image(win->mlx, canvas()->player_normal_right[1].mlx_img);
+	mlx_destroy_image(win->mlx, canvas()->player_normal_left[1].mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->background[0].mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->tile_surface.mlx_img);
 	mlx_destroy_image(win->mlx, canvas()->tile_underground.mlx_img);

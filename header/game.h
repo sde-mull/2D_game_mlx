@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 01:49:29 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:35:43 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void 			animation(void);
 void 			animate_lava(int *lava);
 void 			animate_door(int coll, int max, int *door);
 void 			animate_coin(int *coin);
+void            animate_player(int *player);
 
 //background.c
 void 			get_background(void);
