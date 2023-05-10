@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 21:33:27 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/10 20:35:45 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,7 @@ void	init_background(t_win *win)
 {
 	canvas()->tile_surface = load_images(win, "images/xpm/tiles/Tile_surface.xpm");
 	canvas()->tile_underground = load_images(win, "images/xpm/tiles/Tile_underground.xpm");
-	canvas()->background[0] = load_images(win, "images/xpm/background/final_battle1.xpm");
-	//canvas()->background[1] = load_images(win, "images/xpm/background/ice_battle1.xpm");
-	// canvas()->background[2] = load_images(win, "images/xpm/background/mid_battle1.xpm");
-	// canvas()->background[3] = load_images(win, "images/xpm/background/night_battle1.xpm");
-	// canvas()->background[4] = load_images(win, "images/xpm/background/start_battle1.xpm");
+	canvas()->background[0] = load_images(win, "images/xpm/background/background.xpm");
 }
 
 void	sprite_left(t_win *win)
@@ -81,14 +77,30 @@ void	init_lava(t_win *win)
 
 void	init_coin(t_win *win)
 {
-	canvas()->coin[0] = load_images(win, "images/xpm/collectible/coin.xpm");
-	canvas()->coin[1] = load_images(win, "images/xpm/collectible/coin2.xpm");
-	canvas()->coin[2] = load_images(win, "images/xpm/collectible/coin3.xpm");
-	canvas()->coin[3] = load_images(win, "images/xpm/collectible/coin4.xpm");
-	canvas()->coin[4] = load_images(win, "images/xpm/collectible/coin5.xpm");
-	canvas()->coin[5] = load_images(win, "images/xpm/collectible/coin6.xpm");
-	canvas()->coin[6] = load_images(win, "images/xpm/collectible/coin7.xpm");
-	canvas()->coin[7] = load_images(win, "images/xpm/collectible/coin8.xpm");
+	canvas()->coin[0] = load_images(win, "images/xpm/collectible/cristal.xpm");
+	canvas()->coin[1] = load_images(win, "images/xpm/collectible/cristal2.xpm");
+	canvas()->coin[2] = load_images(win, "images/xpm/collectible/cristal3.xpm");
+	canvas()->coin[3] = load_images(win, "images/xpm/collectible/cristal4.xpm");
+	canvas()->coin[4] = load_images(win, "images/xpm/collectible/cristal5.xpm");
+	canvas()->coin[5] = load_images(win, "images/xpm/collectible/cristal6.xpm");
+	canvas()->coin[6] = load_images(win, "images/xpm/collectible/cristal7.xpm");
+	canvas()->coin[7] = load_images(win, "images/xpm/collectible/cristal8.xpm");
+	canvas()->coin[8] = load_images(win, "images/xpm/collectible/cristal9.xpm");
+	canvas()->coin[9] = load_images(win, "images/xpm/collectible/cristal10.xpm");
+	canvas()->coin[10] = load_images(win, "images/xpm/collectible/cristal11.xpm");
+	canvas()->coin[11] = load_images(win, "images/xpm/collectible/cristal12.xpm");
+	canvas()->coin[12] = load_images(win, "images/xpm/collectible/cristal13.xpm");
+	canvas()->coin[13] = load_images(win, "images/xpm/collectible/cristal14.xpm");
+	canvas()->coin[14] = load_images(win, "images/xpm/collectible/cristal15.xpm");
+	canvas()->coin[15] = load_images(win, "images/xpm/collectible/cristal16.xpm");
+	canvas()->coin[16] = load_images(win, "images/xpm/collectible/cristal17.xpm");
+	canvas()->coin[17] = load_images(win, "images/xpm/collectible/cristal18.xpm");
+	canvas()->coin[18] = load_images(win, "images/xpm/collectible/cristal19.xpm");
+	canvas()->coin[19] = load_images(win, "images/xpm/collectible/cristal20.xpm");
+	canvas()->coin[20] = load_images(win, "images/xpm/collectible/cristal21.xpm");
+	canvas()->coin[21] = load_images(win, "images/xpm/collectible/cristal22.xpm");
+	canvas()->coin[22] = load_images(win, "images/xpm/collectible/cristal23.xpm");
+	canvas()->coin[23] = load_images(win, "images/xpm/collectible/cristal24.xpm");
 }
 
 void	init_door(t_win *win)

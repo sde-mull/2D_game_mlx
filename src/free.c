@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 22:13:11 by kuhaku            #+#    #+#             */
-/*   Updated: 2023/05/08 21:33:41 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/10 20:36:03 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void destroy_images(t_win *win)
 	int index;
 
 	index = 0;
-	while (index < 8)
+	while (index < 23)
 	{
 		if (index < 4)
 			mlx_destroy_image(win->mlx, canvas()->lava[index].mlx_img);

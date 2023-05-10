@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:13:23 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 22:52:27 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/10 20:35:59 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void animation(void)
 	animate_coin(&act()->coin);
 	animate_player(&act()->player);
 	check_action(eng()->keys);
-    cap_fps(120);
+    cap_fps(100);
 }
 
 void animate_lava(int *lava)
@@ -46,7 +46,7 @@ void animate_coin(int *coin)
 		(*coin)++;
 		count = 0;
 	}
-	if (*coin == 8)
+	if (*coin == 24)
 		*coin = 0;
 }
 
