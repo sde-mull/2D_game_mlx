@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/10 20:27:46 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/11 01:16:21 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_canvas
     t_img player_jumping[2];
     t_img player_falling[2];
     t_img lava[4];
-    t_img coin[24];
+    t_img cristal[24];
     t_img door[6];
 }   t_canvas;
 

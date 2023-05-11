@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 22:50:25 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/11 01:17:39 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void 			action_standard(void);
 void 			animation(void);
 void 			animate_lava(int *lava);
 void 			animate_door(int coll, int max, int *door);
-void 			animate_coin(int *coin);
+void            animate_cristal(int *cristal);
 void            animate_player(int *player);
 void            animate_walk(int *walk);
 
@@ -82,7 +82,7 @@ t_img			load_images(t_win *win, char *str);
 t_img			new_image(t_win *win, int x, int y);
 void			init_background(t_win *win);
 void			init_lava(t_win *win);
-void			init_coin(t_win *win);
+void			init_cristal(t_win *win);
 void			init_door(t_win *win);
 void			init_player(t_win *win);
 void			init_images(t_win *win);

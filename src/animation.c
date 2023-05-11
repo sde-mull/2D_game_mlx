@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:13:23 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/10 20:35:59 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/11 01:20:01 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void animation(void)
 {
     animate_lava(&act()->lava);
 	animate_door(data()->collected, data()->max_coll, &act()->door);
-	animate_coin(&act()->coin);
+	animate_cristal(&act()->coin);
 	animate_player(&act()->player);
 	check_action(eng()->keys);
     cap_fps(100);
@@ -36,18 +36,18 @@ void animate_lava(int *lava)
 		*lava = 0;
 }
 
-void animate_coin(int *coin)
+void animate_cristal(int *cristal)
 {
 	static int count;
 
 	count++;
 	if (count == 20)
 	{
-		(*coin)++;
+		(*cristal)++;
 		count = 0;
 	}
-	if (*coin == 24)
-		*coin = 0;
+	if (*cristal == 24)
+		*cristal = 0;
 }
 
 void animate_door(int coll, int max, int *door)
