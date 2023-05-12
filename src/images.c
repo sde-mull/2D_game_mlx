@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/11 22:48:36 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/12 01:06:36 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,30 +77,29 @@ void	init_lava(t_win *win)
 
 void	init_cristal(t_win *win)
 {
-	canvas()->cristal[0] = load_images(win, "images/xpm/collectible/cristal.xpm");
-	canvas()->cristal[1] = load_images(win, "images/xpm/collectible/cristal2.xpm");
-	canvas()->cristal[2] = load_images(win, "images/xpm/collectible/cristal3.xpm");
-	canvas()->cristal[3] = load_images(win, "images/xpm/collectible/cristal4.xpm");
-	canvas()->cristal[4] = load_images(win, "images/xpm/collectible/cristal5.xpm");
-	canvas()->cristal[5] = load_images(win, "images/xpm/collectible/cristal6.xpm");
-	canvas()->cristal[6] = load_images(win, "images/xpm/collectible/cristal7.xpm");
-	canvas()->cristal[7] = load_images(win, "images/xpm/collectible/cristal8.xpm");
-	canvas()->cristal[8] = load_images(win, "images/xpm/collectible/cristal9.xpm");
-	canvas()->cristal[9] = load_images(win, "images/xpm/collectible/cristal10.xpm");
-	canvas()->cristal[10] = load_images(win, "images/xpm/collectible/cristal11.xpm");
-	canvas()->cristal[11] = load_images(win, "images/xpm/collectible/cristal12.xpm");
-	canvas()->cristal[12] = load_images(win, "images/xpm/collectible/cristal13.xpm");
-	canvas()->cristal[13] = load_images(win, "images/xpm/collectible/cristal14.xpm");
-	canvas()->cristal[14] = load_images(win, "images/xpm/collectible/cristal15.xpm");
-	canvas()->cristal[15] = load_images(win, "images/xpm/collectible/cristal16.xpm");
-	canvas()->cristal[16] = load_images(win, "images/xpm/collectible/cristal17.xpm");
-	canvas()->cristal[17] = load_images(win, "images/xpm/collectible/cristal18.xpm");
-	canvas()->cristal[18] = load_images(win, "images/xpm/collectible/cristal19.xpm");
-	canvas()->cristal[19] = load_images(win, "images/xpm/collectible/cristal20.xpm");
-	canvas()->cristal[20] = load_images(win, "images/xpm/collectible/cristal21.xpm");
-	canvas()->cristal[21] = load_images(win, "images/xpm/collectible/cristal22.xpm");
-	canvas()->cristal[22] = load_images(win, "images/xpm/collectible/cristal23.xpm");
-	canvas()->cristal[23] = load_images(win, "images/xpm/collectible/cristal24.xpm");
+	char 	*str1;
+	char 	*str2;
+	char 	*place;
+	char	*path;
+	char	*temp;
+	int 	i;
+
+	str1 = ft_strdup("images/xpm/collectible/cristal");
+	str2 = ft_strdup(".xpm");
+	i = 0;
+	while (i < 24)
+	{
+		place = ft_itoa(i + 1);
+		temp = ft_strjoin(place, str2);
+		path = ft_strjoin(str1, temp);
+		canvas()->cristal[i] = load_images(win, path);
+		free(path);
+		free(place);
+		free(temp);
+		i++;
+	}
+	free(str1);
+	free(str2);
 }
 
 void	init_door(t_win *win)

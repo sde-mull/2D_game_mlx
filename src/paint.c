@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:53:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/11 01:19:44 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/11 23:40:16 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void paint_objects(t_map map, t_canvas canvas, t_action act)
 			if (map.map[y][x] == 'L')
 				paint_icon(canvas.lava[act.lava], x * ICON, y * ICON);
 			else if (map.map[y][x] == 'C')
-				paint_icon(canvas.cristal[act.coin], x * ICON, y * ICON);
+				paint_icon(canvas.cristal[act.cristal], x * ICON, y * ICON);
 			else if (map.map[y][x] == 'E')
 				paint_icon(canvas.door[act.door], x * ICON, (y - 0.5) * ICON);
 			x++;

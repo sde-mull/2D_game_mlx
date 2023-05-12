@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:13:23 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/11 01:20:01 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/11 23:39:45 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void animation(void)
 {
     animate_lava(&act()->lava);
 	animate_door(data()->collected, data()->max_coll, &act()->door);
-	animate_cristal(&act()->coin);
+	animate_cristal(&act()->cristal);
 	animate_player(&act()->player);
 	check_action(eng()->keys);
     cap_fps(100);

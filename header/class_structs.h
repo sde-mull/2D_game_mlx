@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/11 01:16:21 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/11 23:39:58 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_action
     int     falling;
     int     jumping;
     int     lava;
-    int     coin;
+    int     cristal;
     int     door;
     int     player;
 }   t_action;
