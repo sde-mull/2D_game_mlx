@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:16:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/08 01:46:35 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/13 00:02:09 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,5 @@ void save_map(int map_nbr)
     if (canvas()->resized_background.mlx_img)
         mlx_destroy_image(win()->mlx, canvas()->game.mlx_img);
     canvas()->resized_background = new_image(win(), WIN_WIDTH, WIN_HEIGHT);
-    create_background();
+    create_background(canvas()->background[data()->map.map_nbr - 1], &canvas()->resized_background);
 }

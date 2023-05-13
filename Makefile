@@ -6,7 +6,7 @@
 #    By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 16:25:02 by pcoimbra          #+#    #+#              #
-#    Updated: 2023/05/08 00:18:36 by sde-mull         ###   ########.fr        #
+#    Updated: 2023/05/13 02:52:48 by sde-mull         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC_DIR		=	src/
 SRCS		=	game.c init_structs.c rendering.c window.c keys.c \
 				save_map_information.c init_values.c images.c free.c my_mlx_func.c \
 				background.c tile.c paint.c engine.c action.c check.c engine2.c \
-				animation.c
+				animation.c loading.c
 
 GNL_DIR		=	gnl
 GNL			=	$(GNL_DIR)/get_next_line.c $(GNL_DIR)/get_next_line_utils.c

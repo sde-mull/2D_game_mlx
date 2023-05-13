@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:53:46 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/11 23:40:16 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/13 02:48:20 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void paint_hit_box(t_box box)
 	my_mlx_pixel_put(&canvas()->game, box.mr_down_x * ICON, box.mr_down_y * ICON, 0xFFFFFF);
 }
 
-void paint_icon(t_img img, int pos_x, int pos_y)
+void paint_icon(t_img img, int pos_x, int pos_y, t_img *screen)
 {
 	int x;
 	int y;
@@ -36,14 +36,14 @@ void paint_icon(t_img img, int pos_x, int pos_y)
 		{
 			color = my_mlx_get_pixel(&img, x, y);
             if (color)
-			    my_mlx_pixel_put(&canvas()->game, pos_x + x, pos_y + y, (int)color);
+			    my_mlx_pixel_put(screen, pos_x + x, pos_y + y, (int)color);
 			x++;
 		}
 		y++;
 	}	
 }
 
-void paint_objects(t_map map, t_canvas canvas, t_action act)
+void paint_objects(t_map map, t_canvas *canvas, t_action act)
 {
 	int x;
 	int y;
@@ -55,11 +55,11 @@ void paint_objects(t_map map, t_canvas canvas, t_action act)
 		while (x < map.max_x)
 		{
 			if (map.map[y][x] == 'L')
-				paint_icon(canvas.lava[act.lava], x * ICON, y * ICON);
+				paint_icon(canvas->lava[act.lava], x * ICON, y * ICON, &canvas->game);
 			else if (map.map[y][x] == 'C')
-				paint_icon(canvas.cristal[act.cristal], x * ICON, y * ICON);
+				paint_icon(canvas->cristal[act.cristal], x * ICON, y * ICON, &canvas->game);
 			else if (map.map[y][x] == 'E')
-				paint_icon(canvas.door[act.door], x * ICON, (y - 0.5) * ICON);
+				paint_icon(canvas->door[act.door], x * ICON, (y - 0.5) * ICON, &canvas->game);
 			x++;
 		}
 		y++;
@@ -69,8 +69,8 @@ void paint_objects(t_map map, t_canvas canvas, t_action act)
 
 void paint()
 {
-	get_background();
+	get_background(&canvas()->resized_background, &canvas()->game, win()->redirection);
 	get_tiles(data()->map);
-	paint_objects(data()->map, *canvas(), *act());
+	paint_objects(data()->map, canvas(), *act());
 	//paint_hit_box(objs()->player.P_box);
 }

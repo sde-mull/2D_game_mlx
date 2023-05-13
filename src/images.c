@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/12 01:06:36 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/13 02:46:34 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,13 @@ void	init_door(t_win *win)
 	canvas()->door[3] = load_images(win, "images/xpm/door/door4.xpm");
 	canvas()->door[4] = load_images(win, "images/xpm/door/door5.xpm");
 	canvas()->door[5] = load_images(win, "images/xpm/door/door6.xpm");
+	canvas()->door[6] = load_images(win, "images/xpm/door/door7.xpm");
+	canvas()->door[7] = load_images(win, "images/xpm/door/door8.xpm");
+	canvas()->door[8] = load_images(win, "images/xpm/door/door9.xpm");
+	canvas()->door[9] = load_images(win, "images/xpm/door/door10.xpm");
+	canvas()->door[10] = load_images(win, "images/xpm/door/door11.xpm");
+	canvas()->door[11] = load_images(win, "images/xpm/door/door12.xpm");
+	canvas()->door[12] = load_images(win, "images/xpm/door/door13.xpm");
 }
 
 void	init_player(t_win *win)
@@ -117,8 +124,48 @@ void	init_player(t_win *win)
 	sprite_left(win);
 	sprite_right(win);
 }
+
+void	init_loading_letters(t_win *win)
+{
+	char 	*str1;
+	char 	*str2;
+	char 	*place;
+	char	*path;
+	char	*temp;
+	int 	i;
+
+	str1 = ft_strdup("images/xpm/loading/letters/letters");
+	str2 = ft_strdup(".xpm");
+	i = 0;
+	while (i < 60)
+	{
+		place = ft_itoa(i + 1);
+		temp = ft_strjoin(place, str2);
+		path = ft_strjoin(str1, temp);
+		canvas()->loading_letters[i] = load_images(win, path);
+		free(path);
+		free(place);
+		free(temp);
+		i++;
+	}
+	free(str1);
+	free(str2);
+}
+
+void	init_loading(t_win *win)
+{
+	canvas()->loading_screen = new_image(win, WIN_WIDTH, WIN_HEIGHT);
+    canvas()->resized_loading = new_image(win, WIN_WIDTH, WIN_HEIGHT);
+	canvas()->loading_img = load_images(win, "images/xpm/loading/background.xpm");
+    create_background(canvas()->loading_img, &canvas()->resized_loading);
+	data()->loading_img = 1;
+	init_loading_letters(win);
+	data()->loading_letters = 1;
+}
+
 void	init_images(t_win *win)
 {
+	init_loading(win);
 	init_background(win);
 	init_cristal(win);
 	init_lava(win);

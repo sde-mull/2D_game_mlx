@@ -6,14 +6,14 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:29:24 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/07 22:00:36 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/13 00:51:34 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/game.h"
 
 
-void get_background(void)
+void get_background(t_img *resized_background, t_img *game, int redirection)
 {
 	char	*src;
 	char	*dst;
@@ -22,19 +22,17 @@ void get_background(void)
 	y = 0;
 	while(y < WIN_HEIGHT) 
 	{
-    	src = (char*)canvas()->resized_background.addr + y * canvas()->resized_background.line_len;
-   		dst = (char*)canvas()->game.addr + y * canvas()->game.line_len + win()->redirection * canvas()->game.bpp / 8;
-   		memcpy(dst, src, WIN_WIDTH * canvas()->resized_background.bpp / 8);
+    	src = (char*)resized_background->addr + y * resized_background->line_len;
+   		dst = (char*)game->addr + y * game->line_len + redirection * game->bpp / 8;
+   		memcpy(dst, src, WIN_WIDTH * resized_background->bpp / 8);
 		y++;
 	}
 }
 
-void create_background(void)
+void create_background(t_img img, t_img *resized_background)
 {
 	t_resize resize;
-	t_img img;
 
-	img = canvas()->background[data()->map.map_nbr - 1];
 	resize.rate_x = (double)img.imgx /  WIN_WIDTH ;
 	resize.rate_y = (double)img.imgy / WIN_HEIGHT;
 	resize.paint_y = 0;
@@ -47,7 +45,7 @@ void create_background(void)
 		while (resize.x < WIN_WIDTH)
 		{
 			resize.color = my_mlx_get_pixel(&img, resize.paint_x, resize.paint_y);
-			my_mlx_pixel_put(&canvas()->resized_background, resize.x, resize.y, (int)resize.color);
+			my_mlx_pixel_put(resized_background, resize.x, resize.y, (int)resize.color);
 			resize.x++;
 			resize.paint_x += resize.rate_x;
 		}

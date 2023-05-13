@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:13:23 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/11 23:39:45 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/12 23:08:28 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void animate_door(int coll, int max, int *door)
 
 	if (max == coll)
 		count++;
-	if (count == 60 && *door != 5)
+	if (count == 60 && *door != 12)
 	{
 		(*door)++;
 		count = 0;

@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:06:27 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/10 15:42:10 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/12 23:20:52 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void check_collected(int x, int y, char **map)
 
 void check_enter(t_data *data, t_player player)
 {
-	if (data->map.map[(int)player.pos_y][(int)player.pos_x] == 'E' && \
-		data->max_coll == data->collected)
+	if (data->map.map[(int)player.pos_y][(int)(player.pos_x - 0.5)] == 'E' && \
+		data->max_coll == data->collected && act()->door == 12)
 			exit_game();
 }
 

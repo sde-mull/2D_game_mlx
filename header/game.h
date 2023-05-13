@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/11 01:17:39 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/13 00:26:27 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 # include <string.h>
 # include <stdbool.h>
 # include <errno.h>
+# include <pthread.h>
 # include <fcntl.h>
-#include <sys/time.h>
+# include <sys/time.h>
 # include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
@@ -44,8 +45,8 @@ void            animate_player(int *player);
 void            animate_walk(int *walk);
 
 //background.c
-void 			get_background(void);
-void 			create_background(void);
+void            get_background(t_img *resized_background, t_img *game, int redirection);
+void            create_background(t_img img, t_img *resized_background);
 
 //check.c
 void 			check_collected(int x, int y, char **map);
@@ -102,8 +103,8 @@ unsigned int	my_mlx_get_pixel(t_img *data, int x, int y);
 
 //paint.c
 void 			paint_hit_box(t_box box);
-void 			paint_icon(t_img img, int pos_x, int pos_y);
-void 			paint_objects(t_map map, t_canvas canvas, t_action act);
+void 			paint_icon(t_img img, int pos_x, int pos_y,t_img *screen);
+void 			paint_objects(t_map map, t_canvas *canvas, t_action act);
 void 			paint();
 
 //rendering.c
@@ -120,5 +121,10 @@ void 			get_tiles(t_map map);
 //Window.c
 bool			init_window(t_win *win);
 void    		window_management(void);
+
+//loading.c
+
+int    create_process(void);
+void    *loading(void* arg);
 
 #endif
