@@ -6,14 +6,14 @@
 #    By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 16:25:02 by pcoimbra          #+#    #+#              #
-#    Updated: 2023/05/13 02:52:48 by sde-mull         ###   ########.fr        #
+#    Updated: 2023/05/16 20:02:06 by sde-mull         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKEFLAGS += --silent
 
 CC			=	cc
-CFLAGS		=	-g  #-fsanitize=address
+CFLAGS		=	-g  -pthread #-fsanitize=address
 RM			=	rm -f
 CD			=	cd
 
@@ -58,8 +58,7 @@ $(OBJDIR)%.o:$(SRC_DIR)%.c
 
 
 $(DEPS):
-	@cd minilibx-linux;./configure
-
+	@cd minilibx-linux;./configure > /dev/null 2>&1
 init: re
 	./$(NAME) $(MAP)
 
@@ -71,7 +70,7 @@ clean:
 	@$(CD) $(LIBFT) && make clean
 	@$(RM) -r $(OBJDIR)/$(OBJS)
 	@$(RM) -rf $(OBJDIR)
-	@$(CD) $(_MLX); make clean
+	@$(CD) $(_MLX); make clean > /dev/null
 
 fclean:	clean
 	@echo	"\033[101m\033[1mExecutable removed\033[0m"

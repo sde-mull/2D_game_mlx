@@ -6,11 +6,12 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 23:31:08 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/13 02:46:45 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:14:10 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/game.h"
+# include <pthread.h>
 
 void    *loading(void* arg)
 {
