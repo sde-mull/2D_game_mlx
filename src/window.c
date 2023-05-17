@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:21:18 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/17 19:22:12 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/17 20:20:10 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void window_management(void)
 {
 	XInitThreads();
     init_window(win());
-	// init_images(win());
 	create_process();
     mlx_hook(win()->mlx_win , 17, 0, exit_game, NULL);
 	mlx_hook(win()->mlx_win, 2, 1L << 0, scan_key, NULL);

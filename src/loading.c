@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 23:31:08 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/17 19:06:14 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/17 20:20:20 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void    *loading(void* arg)
     flg = 0;
     while (!flg)
     {
-        usleep(110000);
+        usleep(100000);
         pthread_mutex_lock(&eng()->load_lock);
         if (data()->loading_img)
         {

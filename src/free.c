@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 22:13:11 by kuhaku            #+#    #+#             */
-/*   Updated: 2023/05/12 23:07:17 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:46:46 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ void free_win(t_win *win)
 	}
 	if (data()->map.map)
 		free_array(data()->map.map);
+
 }
