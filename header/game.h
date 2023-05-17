@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:39:16 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/13 00:26:27 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:21:56 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <pthread.h>
 # include <fcntl.h>
 # include <sys/time.h>
+# include <X11/Xlib.h>
 # include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"

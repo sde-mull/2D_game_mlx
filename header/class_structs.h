@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:49:48 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/13 01:30:35 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/17 18:47:03 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ typedef struct s_canvas
 
 typedef struct s_engine
 {
-    pthread_t   loading;
+    pthread_t       loading;
+    pthread_mutex_t load_lock;
     t_keys keys;
 }   t_engine;
 

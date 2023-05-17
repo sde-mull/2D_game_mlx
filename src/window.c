@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 20:21:18 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/13 00:20:10 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:22:12 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ bool	init_window(t_win *win)
 
 void window_management(void)
 {
+	XInitThreads();
     init_window(win());
 	// init_images(win());
 	create_process();

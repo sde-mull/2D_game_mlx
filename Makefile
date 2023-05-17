@@ -6,14 +6,14 @@
 #    By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 16:25:02 by pcoimbra          #+#    #+#              #
-#    Updated: 2023/05/16 20:02:06 by sde-mull         ###   ########.fr        #
+#    Updated: 2023/05/17 19:18:46 by sde-mull         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKEFLAGS += --silent
 
 CC			=	cc
-CFLAGS		=	-g  -pthread #-fsanitize=address
+CFLAGS		=	-g  -pthread #-fsanitize=thread
 RM			=	rm -f
 CD			=	cd
 
@@ -40,7 +40,7 @@ _MLX_FLAGS  =	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -l
 MAP 		= 	maps/map1.ber maps/map2.ber maps/map3.ber maps/map4.ber
 
 VALGRIND	= 	valgrind
-VFLAGS		= 	--leak-check=full --show-leak-kinds=all
+VFLAGS		= 	--leak-check=full --show-leak-kinds=all --track-origins=yes
 
 OBJDIR		= 	obj/
 OBJS		=	$(SRCS:%.c=${OBJDIR}%.o)

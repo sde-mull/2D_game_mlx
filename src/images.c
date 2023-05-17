@@ -6,7 +6,7 @@
 /*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 20:27:09 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/13 02:46:34 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/17 19:00:31 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,9 +158,13 @@ void	init_loading(t_win *win)
     canvas()->resized_loading = new_image(win, WIN_WIDTH, WIN_HEIGHT);
 	canvas()->loading_img = load_images(win, "images/xpm/loading/background.xpm");
     create_background(canvas()->loading_img, &canvas()->resized_loading);
+	pthread_mutex_lock(&eng()->load_lock);
 	data()->loading_img = 1;
+	pthread_mutex_unlock(&eng()->load_lock);
 	init_loading_letters(win);
+	pthread_mutex_lock(&eng()->load_lock);
 	data()->loading_letters = 1;
+	pthread_mutex_unlock(&eng()->load_lock);
 }
 
 void	init_images(t_win *win)
