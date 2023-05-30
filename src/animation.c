@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sde-mull <sde-mull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sde-mull <sde.mull@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 00:13:23 by sde-mull          #+#    #+#             */
-/*   Updated: 2023/05/17 20:29:12 by sde-mull         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:39:28 by sde-mull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void animation(void)
 	animate_cristal(&act()->cristal);
 	animate_player(&act()->player);
 	check_action(eng()->keys);
-    // cap_fps(100);
+    cap_fps(100);
 }
 
 void animate_lava(int *lava)
